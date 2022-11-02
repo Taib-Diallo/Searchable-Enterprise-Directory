@@ -2,15 +2,14 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
-// get all interests
+// GET all employees
 router.get('/', (req, res) => {
-  pool
-    .query('SELECT * FROM "interests"')
+  pool.query(`SELECT * FROM "employees" ORDER BY "id" ASC`)
     .then(response => {
       res.send(response.rows);
     })
-    .catch(err => {
-      console.log('getInterests server failed: ', err);
+    .catch(error => {
+      console.log('Error in GET /api/employees:', error);
       res.sendStatus(500);
     });
 });

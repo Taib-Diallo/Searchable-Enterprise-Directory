@@ -11,7 +11,7 @@ export const Loading = styled.div`
 
 export const Header = styled.header`
   font-family: Lobster, monospace;
-  background-color: #d2430f;
+  background-color: #FF0000;
   display: flex;
   align-items: center;
   justify-content: center;

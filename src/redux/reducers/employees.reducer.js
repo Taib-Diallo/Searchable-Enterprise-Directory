@@ -1,6 +1,6 @@
-const pagesReducer = (state = [], action) => {
+const employeesReducer = (state = [], action) => {
   switch (action.type) {
-    case 'GET_PAGES':
+    case 'GET_EMPLOYEES':
       return action.payload;
     case 'RESET_FORM':
       return state = {};
@@ -9,4 +9,4 @@ const pagesReducer = (state = [], action) => {
   }
 };
 
-export default pagesReducer;
+export default employeesReducer;
