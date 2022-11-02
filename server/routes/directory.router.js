@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
       res.send(response.rows);
     })
     .catch(error => {
-      console.log('Error in GET /api/employees:', error);
+      console.log('Error in GET /directory:', error);
       res.sendStatus(500);
     });
 });
