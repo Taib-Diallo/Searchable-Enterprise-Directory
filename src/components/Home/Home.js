@@ -5,19 +5,21 @@ import LoadingBar from '../LoadingBar/LoadingBar';
 
 function Home() {
   const dispatch = useDispatch();
+  const employees = useSelector(store => store.employeesReducer)
 
   useEffect(() => {
-    
+    dispatch({ type: 'GET_EMPLOYEES_SAGA'})
   }, []);
 
   return (
     <div>
-      {1 === 0 ? (
+      {employees.length === 0 ? (
         <LoadingBar />
       ) : (
       <Page>
         <Content>
           <h1>Home Page</h1>
+          {JSON.stringify(employees)}
         </Content>
       </Page>
       )}
