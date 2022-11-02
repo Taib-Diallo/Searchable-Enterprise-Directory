@@ -52,7 +52,7 @@ function Home() {
                 <TableData>{employee.phone_number}</TableData>
                 <TableData>{employee.job_role}</TableData>
                 <TableData>{employee.work_location}</TableData>
-                <TableData>{employee.salary}</TableData>
+                <TableData>${employee.salary}</TableData>
               </TableRow>)
             })}
           </Table>
