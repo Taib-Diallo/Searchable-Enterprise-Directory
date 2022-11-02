@@ -1,6 +1,5 @@
 {
-	"name": "marc-mccarthy-io",
-	"hompage": "marcmccarthy.io",
+	"name": "seachable-enterprise-directory",
 	"version": "0.1.0",
 	"proxy": "http://localhost:5001",
 	"private": true,
