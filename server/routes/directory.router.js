@@ -4,7 +4,8 @@ const router = express.Router();
 
 // GET all employees
 router.get('/', (req, res) => {
-  pool.query(`SELECT * FROM "employees" ORDER BY "id" ASC`)
+  // pool.query(`SELECT * FROM "employees" ORDER BY "id" ASC`)
+  pool.query(`SELECT * FROM "employees"`)
     .then(response => {
       res.send(response.rows);
     })

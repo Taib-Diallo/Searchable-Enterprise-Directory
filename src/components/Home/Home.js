@@ -1,7 +1,25 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { Page, Content } from './Home.styles'
+import { Page, Content, Table, TableRow, TableHeader, TableData } from './Home.styles'
 import LoadingBar from '../LoadingBar/LoadingBar';
+
+const tableHeaders = [
+  {
+    title: 'Name',
+  },
+  {
+    title: 'Phone Number',
+  },
+  {
+    title: 'Job Role',
+  },
+  {
+    title: 'Work Location',
+  },
+  {
+    title: 'Salary',
+  },
+];
 
 function Home() {
   const dispatch = useDispatch();
@@ -18,8 +36,26 @@ function Home() {
       ) : (
       <Page>
         <Content>
-          <h1>Home Page</h1>
-          {JSON.stringify(employees)}
+          <h1>Employee(s) Information</h1>
+          <Table>
+            <TableRow>
+              {tableHeaders.map((header, index) => {
+                return (
+                  <TableHeader key={index}>{header.title}</TableHeader>
+                )
+              })}
+            </TableRow>
+            {employees.map((employee, index) => {
+            return (
+              <TableRow key={index}>
+                <TableData>{employee.name}</TableData>
+                <TableData>{employee.phone_number}</TableData>
+                <TableData>{employee.job_role}</TableData>
+                <TableData>{employee.work_location}</TableData>
+                <TableData>{employee.salary}</TableData>
+              </TableRow>)
+            })}
+          </Table>
         </Content>
       </Page>
       )}

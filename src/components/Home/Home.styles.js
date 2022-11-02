@@ -52,7 +52,6 @@ export const Interests = styled.div`
   display: flex;
   flex-wrap: wrap;
   @media ${devices.tablet} {
-
     grid-row-start: 2;
     grid-column: 1 / 2;
   }
@@ -64,6 +63,25 @@ export const InterestItem = styled.div`
     grid-row: 2;
     grid-column: 2 / -1;
   }
+`
+
+export const Table = styled.table`
+  width: 100%;
+  border-collapse: collapse;
+`
+
+export const TableRow = styled.tr`
+  background-color: #F3F3F3;
+`
+
+export const TableHeader = styled.th`
+  border: 1px solid black;
+  padding: 10px;
+`
+
+export const TableData = styled.td`
+  border: 1px solid black;
+  padding: 10px;
 `
 
 
