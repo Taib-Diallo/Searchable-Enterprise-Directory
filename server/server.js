@@ -5,6 +5,7 @@ const app = express();
 
 // routes included
 const directoryRouter = require('./routes/directory.router');
+const loginRouter = require('./routes/login.router');
 
 // body parser middleware
 app.use(bodyParser.json());
@@ -12,6 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // routes
 app.use('/directory', directoryRouter);
+app.use('/login', loginRouter);
 
 // serve static files
 app.use(express.static('build'));

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { Page, Content, Table, TableRow, TableHeader, TableData } from './Home.styles'
 import LoadingBar from '../LoadingBar/LoadingBar';
 
@@ -24,37 +25,44 @@ const tableHeaders = [
 function Home() {
   const dispatch = useDispatch();
   const employees = useSelector(store => store.employeesReducer)
+  const user = useSelector(store => store.userReducer)
+  const { employee_no } = useParams();
 
   useEffect(() => {
-    dispatch({ type: 'GET_EMPLOYEES_SAGA'})
+    dispatch({ type: 'GET_EMPLOYEES_SAGA', payload: employee_no })
   }, []);
 
   return (
     <div>
-      {employees.length === 0 ? (
+      {employees.length === 0 && user.length === 0 ? (
         <LoadingBar />
       ) : (
       <Page>
         <Content>
+          <h1>Current Employee: {user[0].name}</h1>
           <h1>Employee(s) Information</h1>
           <Table>
-            <TableRow>
-              {tableHeaders.map((header, index) => {
+            <thead>
+              <TableRow>
+                {tableHeaders.map((header, index) => {
+                  return (
+                    <TableHeader key={index}>{header.title}</TableHeader>
+                  )
+                })}
+              </TableRow>
+            </thead>
+            <tbody>
+              {employees.map((employee, index) => {
                 return (
-                  <TableHeader key={index}>{header.title}</TableHeader>
-                )
+                  <TableRow key={index}>
+                    <TableData>{employee.name}</TableData>
+                    <TableData>{employee.phone_number}</TableData>
+                    <TableData>{employee.job_role}</TableData>
+                    <TableData>{employee.work_location}</TableData>
+                    <TableData>${employee.salary}</TableData>
+                  </TableRow>)
               })}
-            </TableRow>
-            {employees.map((employee, index) => {
-            return (
-              <TableRow key={index}>
-                <TableData>{employee.name}</TableData>
-                <TableData>{employee.phone_number}</TableData>
-                <TableData>{employee.job_role}</TableData>
-                <TableData>{employee.work_location}</TableData>
-                <TableData>${employee.salary}</TableData>
-              </TableRow>)
-            })}
+            </tbody>
           </Table>
         </Content>
       </Page>

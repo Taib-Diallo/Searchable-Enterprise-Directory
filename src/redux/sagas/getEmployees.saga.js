@@ -9,7 +9,7 @@ function* getEmployeesSaga() {
 function* getEmployees(action) {
   try {
     // get all employees
-    const employees = yield axios.get('/directory');
+    const employees = yield axios.get(`/directory/${action.payload}`);
     // send employers to reducer
     yield put({ type: 'GET_EMPLOYEES', payload: employees.data });
   } catch (error) {

@@ -2,11 +2,11 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
-// GET all employees
-router.get('/:employee_no', (req, res) => {
+// LOGIN current user
+router.post('/', (req, res) => {
   // pool.query(`SELECT * FROM "employees" ORDER BY "id" ASC`)
-  console.log(req.params)
-  pool.query(`SELECT * FROM "employees" WHERE employee_no <= $1`, [req.params.employee_no])
+  console.log(req.body)
+  pool.query(`SELECT * FROM "employees" WHERE Username = $1 AND Password = $2`, [req.body.username, req.body.password])
     .then(response => {
       res.send(response.rows);
     })
