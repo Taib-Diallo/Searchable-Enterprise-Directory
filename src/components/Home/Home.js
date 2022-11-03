@@ -38,9 +38,9 @@ function Home() {
         <LoadingBar />
       ) : (
       <Page>
+        <h2><u>Viewable Employee Database</u></h2>
+        <h3>Current Employee: {user[0].name}</h3>
         <Content>
-          <h2>Current Employee: {user[0].name}</h2>
-          <h3>Viewable Employee Database</h3>
           <Table>
             <thead>
               <TableRow>

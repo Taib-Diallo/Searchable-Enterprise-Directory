@@ -4,6 +4,8 @@ import devices from '../../devices/devices';
 export const Page = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   @media (min-width: 1450px) {
     margin-left: 10%;
     margin-right: 10%;
@@ -16,15 +18,6 @@ export const Content = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  @media (min-width: 870px) {
-    margin-right: 5%;
-    margin-left: 5%;
-    display: grid;
-    justify-items: center;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    gap: 20px;
-  }
 `
 
 export const Profile = styled.img`
