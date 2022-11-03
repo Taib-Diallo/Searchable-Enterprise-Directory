@@ -26,10 +26,10 @@ function Home() {
   const dispatch = useDispatch();
   const employees = useSelector(store => store.employeesReducer)
   const user = useSelector(store => store.userReducer)
-  const { employee_no } = useParams();
+  const { access_level } = useParams();
 
   useEffect(() => {
-    dispatch({ type: 'GET_EMPLOYEES_SAGA', payload: employee_no })
+    dispatch({ type: 'GET_EMPLOYEES_SAGA', payload: access_level })
   }, []);
 
   return (
@@ -39,8 +39,8 @@ function Home() {
       ) : (
       <Page>
         <Content>
-          <h1>Current Employee: {user[0].name}</h1>
-          <h1>Employee(s) Information</h1>
+          <h2>Current Employee: {user[0].name}</h2>
+          <h3>Viewable Employee Database</h3>
           <Table>
             <thead>
               <TableRow>

@@ -10,7 +10,6 @@ function* loginSaga() {
 
 function* loginUser(action) {
 	try {
-		console.log(action.payload)
 		yield put({ type: 'SET_USER', payload: action.payload });
 	} catch (error) {
 		console.log('Error with user login:', error);

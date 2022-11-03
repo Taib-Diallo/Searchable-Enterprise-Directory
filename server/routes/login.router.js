@@ -4,8 +4,6 @@ const router = express.Router();
 
 // LOGIN current user
 router.post('/', (req, res) => {
-  // pool.query(`SELECT * FROM "employees" ORDER BY "id" ASC`)
-  console.log(req.body)
   pool.query(`SELECT * FROM "employees" WHERE Username = $1 AND Password = $2`, [req.body.username, req.body.password])
     .then(response => {
       res.send(response.rows);
