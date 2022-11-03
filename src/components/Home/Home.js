@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import { Page, Content, Table, TableRow, TableHeader, TableData } from './Home.styles'
+import { useNavigate, useParams } from 'react-router-dom';
+import { Page, Content, Table, TableRow, TableHeader, TableData, TellMeButton } from './Home.styles'
 import LoadingBar from '../LoadingBar/LoadingBar';
 
 const tableHeaders = [
@@ -24,6 +24,7 @@ const tableHeaders = [
 
 function Home() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const employees = useSelector(store => store.employeesReducer)
   const user = useSelector(store => store.userReducer)
   const { access_level } = useParams();
@@ -31,6 +32,10 @@ function Home() {
   useEffect(() => {
     dispatch({ type: 'GET_EMPLOYEES_SAGA', payload: access_level })
   }, []);
+
+  const goToLogin = () => {
+    navigate('/login')
+  }
 
   return (
     <div>
@@ -67,6 +72,14 @@ function Home() {
               })}
             </tbody>
           </Table>
+          <TellMeButton
+            m={3}
+            onClick={goToLogin}
+            sx={{width: 120}}
+            variant='contained'
+				  >
+            Logout
+          </TellMeButton>
         </Content>
       </Page>
       )}

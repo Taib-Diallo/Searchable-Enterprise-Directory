@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios'
+import { Form, Content, TellMe, Label, Input, TellMeButton, InputMessage } from './Login.styled';
 
 function LoginForm() {
 	const [username, setUsername] = useState('');
@@ -38,43 +39,41 @@ function LoginForm() {
 	}; // end login
 
 	return (
-        <form style={{backgroundColor: '#DEDEDE', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }} className='formPanel' onSubmit={login}>
-			<h2>Login</h2>
-			<div>
-				<label htmlFor='username'>
-					Username:
-					<input
-						type='text'
-						name='username'
-						required
-						value={username}
-						onChange={event => setUsername(event.target.value)}
-					/>
-				</label>
-			</div>
-			<div>
-				<label htmlFor='password'>
-					Password:
-					<input
-						type='password'
-						name='password'
-						required
-						value={password}
-						onChange={event => setPassword(event.target.value)}
-					/>
-				</label>
-			</div>
-            <div>
-				<button
+        <Form onSubmit={login}>
+			<h3>Login</h3>
+			<Content>
+                <TellMe>
+                    <Label htmlFor='username'>
+                        Username:
+                        <Input
+                            type='text'
+                            name='username'
+                            required
+                            value={username}
+                            onChange={event => setUsername(event.target.value)}
+                        />
+                    </Label>
+                    <Label htmlFor='password'>
+                        Password:
+                        <Input
+                            type='password'
+                            name='password'
+                            required
+                            value={password}
+                            onChange={event => setPassword(event.target.value)}
+                        />
+                    </Label>
+                </TellMe>
+                <TellMeButton
                     m={3}
                     onClick={login}
                     sx={{width: 120}}
                     variant='contained'
 				>
                     Login
-                </button>
-            </div>
-		</form>
+                </TellMeButton>
+            </Content>
+		</Form>
 	);
 }
 

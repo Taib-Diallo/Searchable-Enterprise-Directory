@@ -77,5 +77,18 @@ export const TableData = styled.td`
   padding: 10px;
 `
 
-
-
+export const TellMeButton = styled.button`
+  width: 7rem;
+  height: 2rem;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 6px #969696;
+  color: #ffffff;
+  background-color: red;
+  border: 1px solid #000000;
+  font-weight: bold;
+  margin-top: 1rem;
+  &:active {
+    transform: scale(0.96);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.25);
+`
