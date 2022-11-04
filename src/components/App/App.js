@@ -17,7 +17,7 @@ function App() {
         <Routes>
           <Route path='/login' element={<Login />} />
           <Route path='/' element={<Login />} />
-          <Route path='/home/:access_level' element={<Home />} />
+          <Route path='/home/:employee_no' element={<Home />} />
           <Route path='*' element={<Page404 />} />
         </Routes>
       </div>

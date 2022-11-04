@@ -1,14 +1,8 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react'
 import searchable from '../../images/searchable.png';
 import { Loading, Header, NavContainer, NavMain, NavLogo, Logo, NavTitle } from './Navigation.styles';
 
 function Navigation() {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    
-  }, []);
 
   return (
     <div>

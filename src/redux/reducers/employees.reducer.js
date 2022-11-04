@@ -1,6 +1,6 @@
 const employeesReducer = (state = [], action) => {
   switch (action.type) {
-    case 'GET_EMPLOYEES':
+    case 'SET_EMPLOYEES':
       return action.payload;
     case 'RESET_FORM':
       return state = {};

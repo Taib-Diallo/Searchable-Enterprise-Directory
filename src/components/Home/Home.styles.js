@@ -92,3 +92,35 @@ export const TellMeButton = styled.button`
     transform: scale(0.96);
     box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.25);
 `
+
+export const TellMe = styled.div`
+  margin: 0.5rem;
+  display: flex;
+  align-items: center;
+  font-size: medium;
+`
+
+export const Label = styled.label`
+  color: red;
+  margin-bottom: 0.5rem;
+`
+
+export const Input = styled.input`
+  height: 2.5rem;
+  border: 0.5px solid blue;
+  border-radius: 10px;
+  width: 100%;
+  padding: 0.7rem;
+  font-size: medium;
+`
+
+export const Form = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media (min-width: 1450px) {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+`

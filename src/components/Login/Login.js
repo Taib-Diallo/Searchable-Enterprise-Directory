@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios'
-import { Form, Content, TellMe, Label, Input, TellMeButton, InputMessage } from './Login.styled';
+import { Form, Content, TellMe, Label, Input, TellMeButton } from './Login.styled';
 
 function LoginForm() {
 	const [username, setUsername] = useState('');
@@ -29,10 +29,6 @@ function LoginForm() {
                 setUsername('')
                 setPassword('')
             } else {
-                dispatch({
-                    type: 'LOGIN_SAGA',
-                    payload: response,
-                });
                 navigate(`/home/${response[0].employee_no}`)
             }
         })

@@ -23,4 +23,5 @@ insert into employees (Employee_no, Name, Phone_number, Job_role, Work_location,
 (2, 'Jackie Hall', '978-203-4545', 'Manager', 'Hartford', 92000, 'jhall@travelers.com', 'cat', 1),
 (3, 'Ashley Bell', '778-321-8567', 'HR', 'Hartford', 75000, 'abell@travelers.com', 'fish', 2),
 (4, 'Carlos Garcia','655-423-8767', 'Employee', 'Hartford', 75000, 'cgarcia@travelers.com', 'snake', 0),
-(5, 'Jack Don','770-863-2436', 'Employee', 'Hartford', 63000, 'jdon@travelers.com', 'bird', 0);
+(5, 'Jack Don','770-863-2436', 'Employee', 'Hartford', 63000, 'jdon@travelers.com', 'bird', 0)
+(6, 'Marc McCarthy', '443-239-0090',  'Employee', 'St. Paul', 322000, 'mmccar15@travelers.com', 'dog', 0);
