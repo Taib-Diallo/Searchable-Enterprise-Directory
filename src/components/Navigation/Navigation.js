@@ -19,10 +19,12 @@ function Navigation() {
         <Header>
           <NavContainer>
             <NavMain>
-              <NavLogo to="/home">
+              <NavLogo to="/login">
                 <Logo alt={"Hackathon"} src={searchable} />
               </NavLogo>
-              <NavTitle to="/home">Searchable Enterprise Directory</NavTitle>
+              <NavTitle to="/not-real-page">
+                Searchable Enterprise Directory
+              </NavTitle>
             </NavMain>
           </NavContainer>
         </Header>
