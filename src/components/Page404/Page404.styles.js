@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Page = styled.div`
   margin: 2rem;
@@ -6,7 +6,7 @@ export const Page = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-`
+`;
 
 export const CautionTape = styled.img`
   width: 100%;
@@ -15,12 +15,12 @@ export const CautionTape = styled.img`
   @media (min-width: 650px) {
     width: 37rem;
   }
-`
+`;
 
 export const Text404 = styled.h2`
-  font-family: 'Patrick Hand', monospace,
-`
+  font-family: "Patrick Hand", monospace;
+`;
 
 export const Text = styled.h2`
-  font-family: 'Patrick Hand', monospace,
-`
+  font-family: "Patrick Hand", monospace;
+`;

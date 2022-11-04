@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import devices from '../../devices/devices';
+import styled from "styled-components";
+import devices from "../../devices/devices";
 
 export const Page = styled.div`
   display: flex;
@@ -10,7 +10,7 @@ export const Page = styled.div`
     margin-left: 10%;
     margin-right: 10%;
   }
-`
+`;
 
 export const Content = styled.div`
   margin: 2rem;
@@ -18,7 +18,7 @@ export const Content = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`
+`;
 
 export const Profile = styled.img`
   width: 10em;
@@ -29,7 +29,7 @@ export const Profile = styled.img`
     width: 13rem;
     height: 13rem;
   }
-`
+`;
 
 export const AboutMe = styled.div`
   font-family: Oswald, monospace;
@@ -39,7 +39,7 @@ export const AboutMe = styled.div`
     grid-column: 2;
     width: 90%;
   }
-`
+`;
 
 export const Interests = styled.div`
   display: flex;
@@ -48,7 +48,7 @@ export const Interests = styled.div`
     grid-row-start: 2;
     grid-column: 1 / 2;
   }
-`
+`;
 
 export const InterestItem = styled.div`
   margin: 0.3rem;
@@ -56,26 +56,26 @@ export const InterestItem = styled.div`
     grid-row: 2;
     grid-column: 2 / -1;
   }
-`
+`;
 
 export const Table = styled.table`
   width: 100%;
   border-collapse: collapse;
-`
+`;
 
 export const TableRow = styled.tr`
-  background-color: #F3F3F3;
-`
+  background-color: #f3f3f3;
+`;
 
 export const TableHeader = styled.th`
   border: 1px solid black;
   padding: 10px;
-`
+`;
 
 export const TableData = styled.td`
   border: 1px solid black;
   padding: 10px;
-`
+`;
 
 export const TellMeButton = styled.button`
   width: 7rem;
@@ -91,19 +91,19 @@ export const TellMeButton = styled.button`
   &:active {
     transform: scale(0.96);
     box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.25);
-`
+`;
 
 export const TellMe = styled.div`
   margin: 0.5rem;
   display: flex;
   align-items: center;
   font-size: medium;
-`
+`;
 
 export const Label = styled.label`
   color: red;
   margin-bottom: 0.5rem;
-`
+`;
 
 export const Input = styled.input`
   height: 2.5rem;
@@ -112,7 +112,7 @@ export const Input = styled.input`
   width: 100%;
   padding: 0.7rem;
   font-size: medium;
-`
+`;
 
 export const Form = styled.div`
   display: flex;
@@ -123,4 +123,4 @@ export const Form = styled.div`
     margin-left: 10%;
     margin-right: 10%;
   }
-`
+`;

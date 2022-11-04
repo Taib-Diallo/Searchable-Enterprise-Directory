@@ -1,20 +1,9 @@
-// // screen sizes
-// const sizes = {
-//   mobileS: '320px',
-//   mobileM: '375px',
-//   mobileL: '425px',
-//   tablet: '768px',
-//   laptop: '1024px',
-//   laptopL: '1440px',
-//   desktop: '2560px'
-// }
-
 // screen sizes
 const sizes = {
-  tablet: '870px',
-  laptop: '1024px',
-  desktop: '1440px',
-}
+  tablet: "870px",
+  laptop: "1024px",
+  desktop: "1440px",
+};
 
 // media queries for screen sizes
 const devices = {

@@ -15,7 +15,7 @@ import {
 } from "./Home.styles";
 import LoadingBar from "../LoadingBar/LoadingBar";
 import axios from "axios";
-import Select from 'react-select'
+import Select from "react-select";
 
 const tableHeaders = [
   {
@@ -57,14 +57,14 @@ function Home() {
   const [relevantEmployees, setRelevantEmployees] = useState([]);
   const [employee, setEmployee] = useState([]);
   const [search, setSearch] = useState("");
-  const [option, setOption] = useState({label: "Name"})
+  const [option, setOption] = useState({ label: "Name" });
 
   useEffect(() => {
     // get all employees
-    getEmployees().then(response => {
+    getEmployees().then((response) => {
       // set the employees
       setEmployees(response);
-      let current = response.filter(employee => {
+      let current = response.filter((employee) => {
         return Number(employee_no) === employee.employee_no;
       });
       // set the current employee
@@ -75,7 +75,7 @@ function Home() {
   useEffect(() => {
     // get all employees
     if (employees.length > 0) {
-      setRelevantEmployees(employees)
+      setRelevantEmployees(employees);
     }
   }, [employees]);
 
@@ -85,25 +85,25 @@ function Home() {
   };
 
   const fastSearch = (event) => {
-    setSearch(event.target.value)
-    let selectedOption
-    
-    let warp = employees.filter(employee => {
-      if (option.label === 'Name') {
+    setSearch(event.target.value);
+    let selectedOption;
+
+    let warp = employees.filter((employee) => {
+      if (option.label === "Name") {
         selectedOption = employee.name.toLowerCase();
-      } else if (option.label === 'Phone Number') {
+      } else if (option.label === "Phone Number") {
         selectedOption = employee.phone_number;
-      } else if (option.label === 'Job Role') {
+      } else if (option.label === "Job Role") {
         selectedOption = employee.job_role.toLowerCase();
-      } else if (option.label === 'Work Location') {
+      } else if (option.label === "Work Location") {
         selectedOption = employee.work_location.toLowerCase();
       }
       if (selectedOption.includes(event.target.value.toLowerCase())) {
-        return employee
+        return employee;
       }
-    })
-    setRelevantEmployees(warp)
-  }
+    });
+    setRelevantEmployees(warp);
+  };
 
   return (
     <div>
@@ -127,7 +127,12 @@ function Home() {
                     value={search}
                     onChange={fastSearch}
                   />
-                  <Select defaultValue={{label: "Name", value: 1}} options={options} value={option} onChange={event => setOption(event)}/>
+                  <Select
+                    defaultValue={{ label: "Name", value: 1 }}
+                    options={options}
+                    value={option}
+                    onChange={(event) => setOption(event)}
+                  />
                 </Label>
               </TellMe>
             </Content>
@@ -164,7 +169,7 @@ function Home() {
             </Table>
             <TellMeButton
               m={3}
-              onClick={event => navigate("/login")}
+              onClick={(event) => navigate("/login")}
               sx={{ width: 120 }}
               variant="contained"
             >

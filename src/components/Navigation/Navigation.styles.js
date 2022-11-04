@@ -1,23 +1,23 @@
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
-import devices from '../../devices/devices';
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import devices from "../../devices/devices";
 
 export const Loading = styled.div`
   height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
-`
+`;
 
 export const Header = styled.header`
   font-family: Lobster, monospace;
-  background-color: #FF0000;
+  background-color: #ff0000;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   position: sticky;
-`
+`;
 
 export const NavContainer = styled.div`
   font-size: 22px;
@@ -33,25 +33,25 @@ export const NavContainer = styled.div`
     justify-content: space-between;
     align-items: center;
   }
-`
+`;
 
 export const NavMain = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`
+`;
 
 export const NavLogo = styled(Link)`
   margin: 0.2rem;
   display: flex;
   justify-content: center;
   align-items: center;
-`
+`;
 
 export const Logo = styled.img`
   width: 3rem;
   height: auto;
-`
+`;
 
 export const NavTitle = styled(Link)`
   font-family: Caveat, monospace;
@@ -60,7 +60,7 @@ export const NavTitle = styled(Link)`
   padding: 0.6em;
   text-decoration: none;
   cursor: pointer;
-`
+`;
 
 export const NavPages = styled.div`
   font-size: 1.5rem;
@@ -68,16 +68,16 @@ export const NavPages = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-`
+`;
 
 export const NavLink = styled(Link)`
   font-size: 0.7em;
   font-family: Lobster, monospace;
   color: #ffffff;
-	padding: 0.6em;
-	text-decoration: none;
-	cursor: pointer;
+  padding: 0.6em;
+  text-decoration: none;
+  cursor: pointer;
   &:hover {
     color: #6ed8f2;
   }
-`
+`;

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Form = styled.div`
   display: flex;
@@ -9,14 +9,14 @@ export const Form = styled.div`
     margin-left: 10%;
     margin-right: 10%;
   }
-`
+`;
 
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`
+`;
 
 export const TellMe = styled.label`
   margin: 0.5rem;
@@ -24,7 +24,7 @@ export const TellMe = styled.label`
   flex-direction: column;
   align-items: center;
   font-size: medium;
-`
+`;
 
 export const TellMeButton = styled.button`
   width: 7rem;
@@ -40,12 +40,12 @@ export const TellMeButton = styled.button`
   &:active {
     transform: scale(0.96);
     box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.25);
-`
+`;
 
 export const Label = styled.label`
   color: red;
   margin-bottom: 0.5rem;
-`
+`;
 
 export const Input = styled.input`
   height: 1.5rem;
@@ -54,4 +54,4 @@ export const Input = styled.input`
   width: 100%;
   padding: 0.7rem;
   font-size: medium;
-`
+`;

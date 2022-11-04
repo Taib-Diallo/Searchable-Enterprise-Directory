@@ -1,6 +1,6 @@
-import { combineReducers } from 'redux';
-import employeesReducer from './employees.reducer'
-import userReducer from './user.reducer'
+import { combineReducers } from "redux";
+import employeesReducer from "./employees.reducer";
+import userReducer from "./user.reducer";
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
