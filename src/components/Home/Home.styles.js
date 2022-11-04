@@ -77,6 +77,14 @@ export const TableData = styled.td`
   padding: 10px;
 `;
 
+export const CenterTableData = styled.td`
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  padding: 10px;
+`;
+
 export const TellMeButton = styled.button`
   width: 7rem;
   height: 2rem;
@@ -123,4 +131,9 @@ export const Form = styled.div`
     margin-left: 10%;
     margin-right: 10%;
   }
+`;
+
+export const TopSecret = styled.img`
+  width: 2em;
+  height: 2.5em;
 `;

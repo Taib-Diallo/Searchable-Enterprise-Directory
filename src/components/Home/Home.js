@@ -12,10 +12,13 @@ import {
   TableHeader,
   TableData,
   TellMeButton,
+  TopSecret,
 } from "./Home.styles";
 import LoadingBar from "../LoadingBar/LoadingBar";
+import SadBar from "../SadBar/SadBar";
 import axios from "axios";
 import Select from "react-select";
+import topSecret from "../../images/top-secret.png";
 
 const tableHeaders = [
   {
@@ -55,7 +58,7 @@ function Home() {
   const { employee_no } = useParams();
   const [employees, setEmployees] = useState([]);
   const [relevantEmployees, setRelevantEmployees] = useState([]);
-  const [employee, setEmployee] = useState([]);
+  const [currentEmployee, setCurrentEmployee] = useState([]);
   const [search, setSearch] = useState("");
   const [option, setOption] = useState({ label: "Name" });
 
@@ -68,7 +71,7 @@ function Home() {
         return Number(employee_no) === employee.employee_no;
       });
       // set the current employee
-      setEmployee(current);
+      setCurrentEmployee(current);
     });
   }, [employee_no]);
 
@@ -87,7 +90,6 @@ function Home() {
   const fastSearch = (event) => {
     setSearch(event.target.value);
     let selectedOption;
-
     let warp = employees.filter((employee) => {
       if (option.label === "Name") {
         selectedOption = employee.name.toLowerCase();
@@ -107,14 +109,14 @@ function Home() {
 
   return (
     <div>
-      {!employee[0] ? (
+      {!currentEmployee[0] ? (
         <LoadingBar />
       ) : (
         <Page>
           <h2>
             <u>Viewable Employee Database</u>
           </h2>
-          <h3>Current Employee: {employee[0].name}</h3>
+          <h3>Current Employee: {currentEmployee[0].name}</h3>
           <Form>
             <Content>
               <TellMe>
@@ -137,45 +139,55 @@ function Home() {
               </TellMe>
             </Content>
           </Form>
-          <Content>
-            <Table>
-              <thead>
-                <TableRow>
-                  {tableHeaders.map((header, index) => {
+          {relevantEmployees.length === 0 ? (
+            <SadBar />
+          ) : (
+            <Content>
+              <Table>
+                <thead>
+                  <TableRow>
+                    {tableHeaders.map((header, index) => {
+                      return (
+                        <TableHeader key={index}>{header.label}</TableHeader>
+                      );
+                    })}
+                  </TableRow>
+                </thead>
+                <tbody>
+                  {relevantEmployees.map((employee, index) => {
                     return (
-                      <TableHeader key={index}>{header.label}</TableHeader>
+                      <TableRow key={index}>
+                        <TableData>{employee.name}</TableData>
+                        <TableData>{employee.phone_number}</TableData>
+                        <TableData>{employee.job_role}</TableData>
+                        <TableData>{employee.work_location}</TableData>
+                        {currentEmployee[0].employee_no === employee.employee_no || currentEmployee[0].access_level - employee.access_level === 1 || currentEmployee[0].access_level === 2 ? (
+                          <TableData>
+                          {employee.salary.toLocaleString("en-US", {
+                            style: "currency",
+                            currency: "USD",
+                          })}
+                        </TableData>
+                        ) : (
+                          <TableData>
+                            <TopSecret src={topSecret} alt="top-secret" />
+                          </TableData>
+                        )}
+                      </TableRow>
                     );
                   })}
-                </TableRow>
-              </thead>
-              <tbody>
-                {relevantEmployees.map((employee, index) => {
-                  return (
-                    <TableRow key={index}>
-                      <TableData>{employee.name}</TableData>
-                      <TableData>{employee.phone_number}</TableData>
-                      <TableData>{employee.job_role}</TableData>
-                      <TableData>{employee.work_location}</TableData>
-                      <TableData>
-                        {employee.salary.toLocaleString("en-US", {
-                          style: "currency",
-                          currency: "USD",
-                        })}
-                      </TableData>
-                    </TableRow>
-                  );
-                })}
-              </tbody>
-            </Table>
-            <TellMeButton
-              m={3}
-              onClick={(event) => navigate("/login")}
-              sx={{ width: 120 }}
-              variant="contained"
-            >
-              Logout
-            </TellMeButton>
-          </Content>
+                </tbody>
+              </Table>
+              <TellMeButton
+                m={3}
+                onClick={(event) => navigate("/login")}
+                sx={{ width: 120 }}
+                variant="contained"
+              >
+                Logout
+              </TellMeButton>
+            </Content>
+          )}
         </Page>
       )}
     </div>
